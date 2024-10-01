@@ -29,8 +29,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 preprocessor = ColumnTransformer(
     transformers=[
         ('num', SimpleImputer(strategy='mean'), X.columns),
-        # ('cat', OneHotEncoder(), categorical_features)
-    ])
+           ])
 
 # Create a pipeline for scaling and SVR model
 pipeline = Pipeline(steps=[('preprocessor', preprocessor),
